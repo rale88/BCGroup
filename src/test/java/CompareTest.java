@@ -51,7 +51,7 @@ public class CompareTest extends BaseTest {
             print("Verify that ''POREDJENJE PROIZVODA'' text is on the front of page");
             ComparePage comparePage = new ComparePage(driver);
             comparePage.headerTextPoredjenjeProzivoda.getText();
-            assert comparePage.headerTextPoredjenjeProzivoda.getText().equals("POREDJENJE PROIZVODA"): "Wrong text. Actual shpuld be:" + comparePage.headerTextPoredjenjeProzivoda.getText();
+            assert comparePage.headerTextPoredjenjeProzivoda.getText().equals("POREDJENJE PROIZVODA"): "Wrong text. Actual should be:" + comparePage.headerTextPoredjenjeProzivoda.getText();
 
 
         }finally {
