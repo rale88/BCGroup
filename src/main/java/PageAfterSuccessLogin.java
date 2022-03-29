@@ -11,6 +11,12 @@ public class PageAfterSuccessLogin extends BasePage{
     @FindBy(xpath = "//*[@id=\"mainnavwrap\"]/ul/li[1]/ul/li[5]/a")
     WebElement telefoniButton;
 
+    @FindBy(id = "si")
+    WebElement searchButton;
+
+    @FindBy(className = "button-search")
+    WebElement pronadjiButton;
+
 
     public PageAfterSuccessLogin(ChromeDriver driver){
         super(driver);

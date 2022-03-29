@@ -10,7 +10,11 @@ public class BasePage {
         this.driver = driver;
 
     }
-
-
+    public void sleep(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (Exception e) {
+        }
+    }
 
 }

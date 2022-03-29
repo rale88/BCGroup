@@ -30,8 +30,23 @@ public class BaseTest {
 
     }
 
+    public SearchLgTelevizorPage putTextInSearchField(ChromeDriver driver) {
+        print("unesi text 'LG televizor'");
+        PageAfterSuccessLogin pageAfterSuccessLogin = new PageAfterSuccessLogin(driver);
+        pageAfterSuccessLogin.searchButton.sendKeys("LG televizor");
+        pageAfterSuccessLogin.searchButton.click();
+        SearchLgTelevizorPage searchLgTelevizorPage = new SearchLgTelevizorPage(driver);
+        return  searchLgTelevizorPage;
 
+    }
 
+    public void sleep(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (Exception e) {
+        }
+
+    }
 
     public static void print (String s){
         System.out.println(s);
