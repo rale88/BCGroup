@@ -8,6 +8,6 @@ public class Korpa extends BasePage {
         super(driver);
 
     }
-        @FindBy(xpath = "//*[@id=\"cartForm\"]/div[1]/div[1]/a")
+        @FindBy(xpath = "//a[text() = 'Nastavi kupovinu']")
         WebElement nastaviKupovinuButton;
     }

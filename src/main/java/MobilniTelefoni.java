@@ -9,7 +9,8 @@ public class MobilniTelefoni extends BasePage {
 
     }
 
-    @FindBy(xpath = "//*[@id=\"prodCarousel\"]/div/div[1]/div[1]/div/p[1]/a[2]/img")
+    @FindBy(partialLinkText = "SAMSUNG Galaxy A12 4GB/128GB Beli")
     WebElement galaxyA12;
+
 
 }

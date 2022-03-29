@@ -51,7 +51,7 @@ public class ShopingTest extends BaseTest {
 
          }
          finally {
-             driver.quit();
+//             driver.quit();
 
 
          }

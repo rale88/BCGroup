@@ -4,11 +4,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class PageAfterSuccessLogin extends BasePage{
 
-    //Webelements
-    @FindBy(xpath = "//*[@id=\"mainnavwrap\"]/ul/li[1]/ul/li[2]/a")
+
+
+    @FindBy(xpath = "//a[text()='LAPTOPOVI I TABLETI']")
     WebElement laptopoviITabletiButton;
 
-    @FindBy(xpath = "//*[@id=\"mainnavwrap\"]/ul/li[1]/ul/li[5]/a")
+    @FindBy(xpath = "//a[text()='TELEFONI']")
     WebElement telefoniButton;
 
     @FindBy(id = "si")

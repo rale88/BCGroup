@@ -8,7 +8,8 @@ public class Telefoni extends BasePage {
         super(driver);
     }
 
-    @FindBy(xpath = "//*[@id=\"rightwrap\"]/div/div[1]/div/p/a/img")
+    @FindBy(xpath = "//img[@alt='Mobilni telefoni']")
     WebElement mobilniTelefoni;
 
 }
+
