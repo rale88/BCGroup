@@ -7,14 +7,16 @@ import org.testng.annotations.Test;
 public class ShopingTest extends BaseTest {
 
     /**
-     * Add an item from AfterSuccessLoginPage
+     * Add an item from AfterSuccessLoginPage to cart
      *
      * Steps:
      * 1. Login as valid user
-     * 2. From AfterSuccessLoginPage click on 'Add to cart' button for one item
-     *
+     * 2. From AfterSuccessLoginPage page, click on 'Telefoni' button
+     * 3. From Telefoni page, click on mobilni telefoni' button
+     * 4. From MobilniTelefoni page, click on 'galaxyA12' button
+     * 5. From SamsungGalaxyA12 page, click on 'dodaj u korpu' button
      * Expected results
-     * 2. Verify that shopping cart icon has number 1 on it
+     * 1. Verify that shopping page contains Nastavi kupovinu text
      */
 
      @Test
@@ -40,7 +42,7 @@ public class ShopingTest extends BaseTest {
              SamsungGalaxyA12 samsungGalaxyA12 = new SamsungGalaxyA12(driver);
              samsungGalaxyA12.dodajUKorpuButton.click();
 
-             print("Verify that shopping page contains Nasavi kupovinu text");
+             print("Verify that shopping page contains Nastavi kupovinu text");
              Korpa korpa = new Korpa(driver);
              WebDriverWait wait = new WebDriverWait(driver,3);
              wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"cartForm\"]/div[1]/div[1]/a")));
