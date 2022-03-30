@@ -2,9 +2,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class PageLaptopovi extends BasePage {
+public class NotebooksModelsPage extends BasePage {
 
-    public PageLaptopovi (ChromeDriver driver){
+    public NotebooksModelsPage(ChromeDriver driver){
         super(driver);
     }
 

@@ -46,7 +46,7 @@ public class LoginTests extends BaseTest {
      * Login with invalid credentials
      *
      * Steps:
-     * 1. Open Chrome driver
+     * 1. Open Chrome driver and login page
      * 2. Enter invalid Username
      * 3. Enter valid Password
      * 4. Click on the login button
@@ -60,7 +60,7 @@ public class LoginTests extends BaseTest {
             ChromeDriver driver = openChromeDriver();
 
             try {
-                print("Open Chrome driver");
+                print("Open Chrome driver and login page");
                 LoginPage loginPage = new LoginPage(driver);
 
                 print("Enter invalid username");

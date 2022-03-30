@@ -40,9 +40,9 @@ public class LoginPage {
     }
 
     //metoda koja klikce na "Uloguj se" dugme
-    public PageAfterSuccessLogin clickLoginButton(){
+    public AfterSuccessLoginPage clickLoginButton(){
         loginButton.click();
-        PageAfterSuccessLogin afterSuccessLoginPage = new PageAfterSuccessLogin(driver);
+        AfterSuccessLoginPage afterSuccessLoginPage = new AfterSuccessLoginPage(driver);
         return afterSuccessLoginPage;
     }
 

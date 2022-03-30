@@ -27,16 +27,16 @@ public class SearchForSpecificParametersNotebook extends BaseTest {
 
         try {
             print("Login as valid user");
-            PageAfterSuccessLogin pageAfterSuccessLogin = loginAsValidUser(driver);
+            AfterSuccessLoginPage pageAfterSuccessLogin = loginAsValidUser(driver);
 
             print("Choose ''laptopovi i tableti''");
             pageAfterSuccessLogin.laptopoviITabletiButton.click();
 
             print("Choose ''laptopovi''");
-            PageLaptopoviITableti pageLaptopoviITableti = new PageLaptopoviITableti(driver);
+            GroupOfLaptopoviITabletiPage pageLaptopoviITableti = new GroupOfLaptopoviITabletiPage(driver);
             pageLaptopoviITableti.laptopoviButton.click();
 
-            PageLaptopovi pageLaptopovi = new PageLaptopovi(driver);
+            NotebooksModelsPage pageLaptopovi = new NotebooksModelsPage(driver);
             print("Choose HP checkbox");
             pageLaptopovi.checkboxHP.click();
             sleep(1);

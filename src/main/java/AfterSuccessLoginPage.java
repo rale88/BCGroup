@@ -2,7 +2,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class PageAfterSuccessLogin extends BasePage{
+public class AfterSuccessLoginPage extends BasePage{
 
 
 
@@ -18,8 +18,10 @@ public class PageAfterSuccessLogin extends BasePage{
     @FindBy(className = "button-search")
     WebElement pronadjiButton;
 
+    @FindBy(xpath = "//a[text() = 'Rasprodaja']")
+    WebElement rasprodajaButton;
 
-    public PageAfterSuccessLogin(ChromeDriver driver){
+    public AfterSuccessLoginPage(ChromeDriver driver){
         super(driver);
     }
 

@@ -19,22 +19,22 @@ public class BaseTest {
         assert actualUrl.equals(expectedUrl) : "Wrong URL. Expected: " + expectedUrl + " . Actual: " + actualUrl;
     }
 
-    public PageAfterSuccessLogin loginAsValidUser(ChromeDriver driver) {
+    public AfterSuccessLoginPage loginAsValidUser(ChromeDriver driver) {
         print("Login as valid user");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterTextIntoUsernameField(Strings.STANDARD_USER);
         loginPage.enterTextIntoPasswordField(Strings.VALID_PASSWORD);
-        PageAfterSuccessLogin afterSuccessLoginPage = loginPage.clickLoginButton();
+        AfterSuccessLoginPage afterSuccessLoginPage = loginPage.clickLoginButton();
         return afterSuccessLoginPage;
 
     }
 
-    public SearchLgTelevizorPage putTextInSearchField(ChromeDriver driver) {
+    public TVModelPage putTextInSearchField(ChromeDriver driver) {
         print("unesi text 'LG televizor'");
-        PageAfterSuccessLogin pageAfterSuccessLogin = new PageAfterSuccessLogin(driver);
+        AfterSuccessLoginPage pageAfterSuccessLogin = new AfterSuccessLoginPage(driver);
         pageAfterSuccessLogin.searchButton.sendKeys("LG televizor");
         pageAfterSuccessLogin.searchButton.click();
-        SearchLgTelevizorPage searchLgTelevizorPage = new SearchLgTelevizorPage(driver);
+        TVModelPage searchLgTelevizorPage = new TVModelPage(driver);
         return searchLgTelevizorPage;
 
     }
@@ -44,6 +44,8 @@ public class BaseTest {
             Thread.sleep(seconds * 1000);
         } catch (Exception e) {
         }
+
+
 
     }
 
