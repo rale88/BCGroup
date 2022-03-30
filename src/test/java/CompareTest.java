@@ -42,19 +42,20 @@ public class CompareTest extends BaseTest {
             print("Click on the button uporedi for LG 32LQ630B6LA SMART HD READY model");
             searchLgTelevizorPage.uporediButtonForLG32LQ630B6LA.click();
 
-            sleep(3);
+            sleep(1);
             print("Click on the button UPOREDI PROIZVODE");
             searchLgTelevizorPage.uporediProizvodeButton.click();
 
             print("Verify that you are on compare page URL https://www.bcgroup-online.com/compare");
+            assertUrl(driver.getCurrentUrl(), Strings.COMPARE_PAGE);
 
             print("Verify that ''POREDJENJE PROIZVODA'' text is on the front of page");
             ComparePage comparePage = new ComparePage(driver);
-            comparePage.headerTextPoredjenjeProzivoda.getText();
-            assert comparePage.headerTextPoredjenjeProzivoda.getText().equals("POREDJENJE PROIZVODA"): "Wrong text. Actual should be:" + comparePage.headerTextPoredjenjeProzivoda.getText();
+            comparePage.compare();
 
 
         }finally {
+//            driver.quit();
 
         }
 

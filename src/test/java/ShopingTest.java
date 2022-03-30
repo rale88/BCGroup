@@ -44,8 +44,6 @@ public class ShopingTest extends BaseTest {
 
              print("Verify that shopping page contains Nastavi kupovinu text");
              Korpa korpa = new Korpa(driver);
-             WebDriverWait wait = new WebDriverWait(driver,3);
-             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"cartForm\"]/div[1]/div[1]/a")));
              korpa.nastaviKupovinuButton.getText();
              assert korpa.nastaviKupovinuButton.getText().equals("Nastavi kupovinu") : "Wrong text. Actual:" + korpa.nastaviKupovinuButton.getText();
 

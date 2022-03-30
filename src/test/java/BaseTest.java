@@ -1,6 +1,5 @@
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 public class BaseTest {
 
     public ChromeDriver openChromeDriver() {
@@ -15,12 +14,12 @@ public class BaseTest {
         return driver;
     }
 
-    public void assertUrl(String actualUrl, String expectedUrl){
+    public void assertUrl(String actualUrl, String expectedUrl) {
         print("assertUrl (" + actualUrl + " , " + expectedUrl + " )");
-        assert actualUrl.equals(expectedUrl):"Wrong URL. Expected: " + expectedUrl + " . Actual: " + actualUrl;
+        assert actualUrl.equals(expectedUrl) : "Wrong URL. Expected: " + expectedUrl + " . Actual: " + actualUrl;
     }
 
-    public PageAfterSuccessLogin loginAsValidUser(ChromeDriver driver){
+    public PageAfterSuccessLogin loginAsValidUser(ChromeDriver driver) {
         print("Login as valid user");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterTextIntoUsernameField(Strings.STANDARD_USER);
@@ -36,7 +35,7 @@ public class BaseTest {
         pageAfterSuccessLogin.searchButton.sendKeys("LG televizor");
         pageAfterSuccessLogin.searchButton.click();
         SearchLgTelevizorPage searchLgTelevizorPage = new SearchLgTelevizorPage(driver);
-        return  searchLgTelevizorPage;
+        return searchLgTelevizorPage;
 
     }
 
@@ -48,11 +47,10 @@ public class BaseTest {
 
     }
 
-    public static void print (String s){
+    public static void print(String s) {
         System.out.println(s);
     }
-
-
+    
 
 
 }

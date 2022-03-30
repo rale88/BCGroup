@@ -19,18 +19,26 @@ public class LoginTests extends BaseTest {
     @Test
     public void loginWithValidCredentials() {
 
+        print("Open Chrome driver");
         ChromeDriver driver = openChromeDriver();
 
         try {
+            print("Open Chrome driver");
             LoginPage loginPage = new LoginPage(driver);
 
-            loginPage.enterTextIntoUsernameField(Strings.STANDARD_USER)
-                    .enterTextIntoPasswordField(Strings.VALID_PASSWORD)
-                    .clickLoginButton();
+            print("Enter valid username");
+            loginPage.enterTextIntoUsernameField(Strings.STANDARD_USER);
 
+            print("Enter valid password");
+            loginPage.enterTextIntoPasswordField(Strings.VALID_PASSWORD);
+
+            print("Click on the login button");
+            loginPage.clickLoginButton();
+
+            print("Verify that current URL is AFTERLOGIN_URL");
             assertUrl(driver.getCurrentUrl(), Strings.AFTERLOGIN_URL);
         } finally {
-            driver.quit();
+//            driver.quit();
         }
     }
 
@@ -40,7 +48,7 @@ public class LoginTests extends BaseTest {
      * Steps:
      * 1. Open Chrome driver
      * 2. Enter invalid Username
-     * 3. Enter valid password
+     * 3. Enter valid Password
      * 4. Click on the login button
      *
      * Expected results
@@ -52,11 +60,19 @@ public class LoginTests extends BaseTest {
             ChromeDriver driver = openChromeDriver();
 
             try {
+                print("Open Chrome driver");
                 LoginPage loginPage = new LoginPage(driver);
 
-                loginPage.enterTextIntoUsernameField(Strings.INVALID_USER)
-                        .enterTextIntoPasswordField(Strings.VALID_PASSWORD).clickLoginButton();
+                print("Enter invalid username");
+                loginPage.enterTextIntoUsernameField(Strings.INVALID_USER);
 
+                print("Enter valid password");
+                loginPage.enterTextIntoPasswordField(Strings.VALID_PASSWORD);
+
+                print("Click on the login button");
+                loginPage.clickLoginButton();
+
+                print("Verify that current URL is LOGIN_URL = \"https://www.bcgroup-online.com/korisnik-login");
                 assertUrl(driver.getCurrentUrl(), Strings.LOGIN_URL);
             }finally {
                 driver.quit();
