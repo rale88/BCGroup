@@ -21,9 +21,8 @@ public class SmarthponeModelsPage extends BasePage {
     @FindBy(xpath = "//a[@title='Poslednja strana']")
     WebElement lastPageButton;
 
-    public void pickOnePhone (String s){
-
-
+    public void pickGalaxyA12 (){
+        galaxyA12.click();
     }
 
 

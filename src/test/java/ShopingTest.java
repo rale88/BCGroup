@@ -33,11 +33,10 @@ public class ShopingTest extends BaseTest {
 
             print("Choose SAMSUNG Galaxy A12 4GB/128GB");
             SmarthponeModelsPage mobilniTelefoni = new SmarthponeModelsPage(driver);
-            mobilniTelefoni.galaxyA12.click();
+            mobilniTelefoni.pickGalaxyA12();
 
             print("Choose dodaj u korpu button");
             SpecificSmartphoneModelPage samsungGalaxyA12 = new SpecificSmartphoneModelPage(driver);
-//             samsungGalaxyA12.dodajUKorpuButton.click();
             samsungGalaxyA12.getPhoneInCart();
 
             print("Verify that shopping page equals Nastavi kupovinu text");
