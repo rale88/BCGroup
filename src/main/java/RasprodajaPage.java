@@ -31,25 +31,27 @@ public class RasprodajaPage extends BasePage {
     }
 
 
+
+//
     public RasprodajaPage assertValuesAreBelowThanRequested() {
-//        int num = 30000;
-//        priceForFirstZvucnickOption.getText();
+        int num = 30000;
+        priceForFirstZvucnickOption.getText();
         String price1 = priceForFirstZvucnickOption.getText();
         sleep(3);
         Float priceNum1 = Float.valueOf(price1);
 //        priceForSecondZvucnickOption.getText();
-//        String price2 = priceForSecondZvucnickOption.getText();
-//        int priceNum2 = Integer.parseInt(price2);
+        String price2 = priceForSecondZvucnickOption.getText();
+        int priceNum2 = Integer.parseInt(price2);
         System.out.println(priceNum1);
-//        if(priceNum1<num){
-//            System.out.println("GOOD!");
-//        }
-//        if (priceNum2<num){
-//            System.out.println("GOOD!");
-//        }
-//        else {
-//            System.out.println("Wrong, products should be cheaper than requested value of" + num);
-//        }
+        if(priceNum1<num){
+            System.out.println("GOOD!");
+        }
+        if (priceNum2<num){
+            System.out.println("GOOD!");
+        }
+        else {
+            System.out.println("Wrong, products should be cheaper than requested value of" + num);
+        }
         return this;
         }
     }

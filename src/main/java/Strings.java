@@ -8,6 +8,7 @@ public class Strings {
     public static final String COMPARE_PAGE = "https://www.bcgroup-online.com/compare";
     public static final String THIRD_PAGE = "https://www.bcgroup-online.com/mobilni-telefoni-p3";
     public static final String LAST_PAGE = "https://www.bcgroup-online.com/mobilni-telefoni-p11";
+    public static final String ZVUCNICI_PAGE = "https://www.bcgroup-online.com/proizvodi-rasprodaja#price=30000&cat[]=31&pos=3";
 
 
 
