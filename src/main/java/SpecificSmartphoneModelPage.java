@@ -12,9 +12,14 @@ public class SpecificSmartphoneModelPage extends  BasePage{
     @FindBy(id = "adtocart id=")
     WebElement dodajUKorpuButton;
 
+    @FindBy(xpath = "//img[@alt='akcija']")
+    WebElement lastPageAssertText;
+
     public void getPhoneInCart() {
         dodajUKorpuButton.click();
     }
+
+
 
 }
 

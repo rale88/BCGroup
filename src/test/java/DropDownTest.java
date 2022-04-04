@@ -16,7 +16,7 @@ public class DropDownTest extends BaseTest {
      * 3. Click on 'Rasprodaja' button
      * 4. Choose options 'Zvucnini' and price 30.000 from drop down
      * Expected results
-     * Verify that all prices are below 30.000 value
+     * Verify that you are on URL where all prices are below 30.000 value for 'zvucnici' option
      */
 
 @Test
@@ -37,7 +37,7 @@ public class DropDownTest extends BaseTest {
         rasprodajaPage.chooseZvucniciAndChoosePriceFromDropDown();
         sleep(3);
 
-        print("Verify that you are on page with zvucnici models");
+        print("Verify that you are on URL where all prices are below 30.000 value for 'zvucnici' option");
         assertUrl(driver.getCurrentUrl(), Strings.ZVUCNICI_PAGE);
 
 //        print("Verify that all prices are below 30.000 value");

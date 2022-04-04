@@ -1,6 +1,8 @@
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
+import javax.print.attribute.standard.PrinterInfo;
+
 public class ShopingTest extends BaseTest {
 
     /**
@@ -8,12 +10,13 @@ public class ShopingTest extends BaseTest {
      * <p>
      * Steps:
      * 1. Login as valid user
-     * 2. From PageAfterSuccessLogin page, click on 'Telefoni' button
-     * 3. From Telefoni page, click on mobilni telefoni' button
-     * 4. From MobilniTelefoni page, click on 'galaxyA12' button
-     * 5. From SamsungGalaxyA12 page, click on 'dodaj u korpu' button
+     * 2. From AfterSuccessLoginPage choose 'telefoni' group option
+     * 3. From GroupOfTelefoniPage choose 'mobilni telefoni' button
+     * 4. From SmarthponeModelsPage, click on 'galaxyA12' button
+     * 5. From SpecificSmartphoneModelPage, click on 'dodaj u korpu' button
      * Expected results
-     * 1. Verify that shopping page contains Nastavi kupovinu text
+     * 1. Verify that shopping page contains 'Nastavi kupovinu' text
+     * 2. Verify that current URL is: "https://www.bcgroup-online.com/korpa"
      */
 
     @Test
@@ -24,10 +27,10 @@ public class ShopingTest extends BaseTest {
             print("Login as valid user");
             AfterSuccessLoginPage pageAfterSuccessLogin = loginAsValidUser(driver);
 
-            print("Choose telefoni button");
+            print("Choose 'telefoni' group option");
             pageAfterSuccessLogin.telefoniButton.click();
 
-            print("Choose mobilni telefoni");
+            print("Choose 'mobilni telefoni' ");
             GroupOfTelefoniPage telefoni = new GroupOfTelefoniPage(driver);
             telefoni.mobilniTelefoni.click();
 
@@ -35,13 +38,18 @@ public class ShopingTest extends BaseTest {
             SmarthponeModelsPage mobilniTelefoni = new SmarthponeModelsPage(driver);
             mobilniTelefoni.pickGalaxyA12();
 
-            print("Choose dodaj u korpu button");
+            print("Choose 'dodaj u korpu' button");
             SpecificSmartphoneModelPage samsungGalaxyA12 = new SpecificSmartphoneModelPage(driver);
             samsungGalaxyA12.getPhoneInCart();
 
-            print("Verify that shopping page equals Nastavi kupovinu text");
+            print("Verify that shopping page contains 'Nastavi kupovinu' text");
             CartPage korpa = new CartPage(driver);
             assert korpa.getNastaviKupovinuText().equals("Nastavi kupovinu") : "Wrong text. Actual:" + korpa.getNastaviKupovinuText();
+
+            print("Verify that current URL is: 'https://www.bcgroup-online.com/korpa");
+            assertUrl(driver.getCurrentUrl(), Strings.KORPA_PAGE);
+
+
         } finally {
 //             driver.quit();
 
@@ -52,12 +60,12 @@ public class ShopingTest extends BaseTest {
          *
          * Steps:
          * 1. Login as valid user
-         * 2. From PageAfterSuccessLogin page, click on 'Telefoni' button
-         * 3. From Telefoni page, click on mobilni telefoni' button
-         * 4. From MobilniTelefoni page, go on 3rd page
+         * 2. From AfterSuccessLoginPage click on 'Telefoni' button
+         * 3. From GroupOfTelefoniPage, click on mobilni telefoni' button
+         * 4. From SmarthponeModelsPage page, go on 3rd page
          * 5. From 3rd page go to last page '>>'
          * Expected results
-         * Verify that going through pages is working
+         * Verify that going through pages redirecting properly
          * 1.Verify via URL redirection to 3rd page
          * 2.Verify via URL redirection to last page
          */
@@ -70,10 +78,10 @@ public class ShopingTest extends BaseTest {
                 print("Login as valid user");
                 AfterSuccessLoginPage pageAfterSuccessLogin = loginAsValidUser(driver);
 
-                print("Choose telefoni button");
+                print("Choose 'telefoni' button");
                 pageAfterSuccessLogin.telefoniButton.click();
 
-                print("Choose mobilni telefoni");
+                print("Choose 'mobilni telefoni' button");
                 GroupOfTelefoniPage telefoni = new GroupOfTelefoniPage(driver);
                 telefoni.mobilniTelefoni.click();
 
@@ -89,6 +97,7 @@ public class ShopingTest extends BaseTest {
 
                 print("Verify via URL redirection to last page");
                 assertUrl(driver.getCurrentUrl(), Strings.LAST_PAGE);
+
 
             } finally {
 //             driver.quit();

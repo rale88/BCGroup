@@ -7,10 +7,11 @@ public class LoginTests extends BaseTest {
      * Login with valid credentials
      *
      * Steps:
-     * 1. Open Chrome driver
-     * 2. Enter valid Username
-     * 3. Enter valid password
-     * 4. Click on the login button
+     * 1. Open Chrome
+     * 2. Open login page
+     * 3. Enter valid Username
+     * 4. Enter valid password
+     * 5. Click on the login button
      *
      * Expected results
      * Verify that current URL is AFTERLOGIN_URL = "https://www.bcgroup-online.com/korisnik";
@@ -19,11 +20,11 @@ public class LoginTests extends BaseTest {
     @Test
     public void loginWithValidCredentials() {
 
-        print("Open Chrome driver");
+        print("Open Chrome");
         ChromeDriver driver = openChromeDriver();
 
         try {
-            print("Open Chrome driver");
+            print("Open login page");
             LoginPage loginPage = new LoginPage(driver);
 
             print("Enter valid username");
@@ -46,7 +47,8 @@ public class LoginTests extends BaseTest {
      * Login with invalid credentials
      *
      * Steps:
-     * 1. Open Chrome driver and login page
+     * 1. Open Chrome
+     * 2. Open login page
      * 2. Enter invalid Username
      * 3. Enter valid Password
      * 4. Click on the login button
@@ -57,10 +59,11 @@ public class LoginTests extends BaseTest {
         @Test
         public void loginWithInvalidCredentials(){
 
+            print("Open Chrome");
             ChromeDriver driver = openChromeDriver();
 
             try {
-                print("Open Chrome driver and login page");
+                print("Open login page");
                 LoginPage loginPage = new LoginPage(driver);
 
                 print("Enter invalid username");
@@ -75,7 +78,7 @@ public class LoginTests extends BaseTest {
                 print("Verify that current URL is LOGIN_URL = \"https://www.bcgroup-online.com/korisnik-login");
                 assertUrl(driver.getCurrentUrl(), Strings.LOGIN_URL);
             }finally {
-                driver.quit();
+//                driver.quit();
             }
     }
 }

@@ -17,7 +17,6 @@ public class SearchForSpecificParametersNotebook extends BaseTest {
      * 5. Choose Zbook Fury model
      * Expected results
      * 1. Verify that you are on page ZBOOK_URL from Strings class
-     * 2. Verify that header text contains all requested specification
      */
 
     @Test
@@ -60,9 +59,12 @@ public class SearchForSpecificParametersNotebook extends BaseTest {
             print("Choose Zbook Fury model");
             pageLaptopovi.hpZbookFury.click();
 
-            print("Verify that header text contains all requested specification");
+            print("Verify that you are on page ZBOOK_URL from Strings class");
             assertUrl(driver.getCurrentUrl(), Strings.ZBOOK_URL_PAGE);
 
+//            print("Verify that header text contains all requested specification");
+//            SpecificNotebookModelPage specificNotebookModelPage = new SpecificNotebookModelPage();
+//            specificNotebookModelPage.getIntroText();
 
         }finally {
 //            driver.quit();
